@@ -1,0 +1,75 @@
+Publica en Buffer tres videos ya renderizados. No los regeneres. No llames a Buffer antes de la hora indicada.
+
+BLOQUEO: buffer___get_account respondió 429 el 2026-11-13 alrededor de 23:32 UTC con Retry-After 615711 segundos. La hora más temprana para llamar a Buffer es 2026-11-21T03:10:00Z. Si ahora es antes, ejecuta sleep hasta esa hora (un solo sleep) y sigue. Si Buffer vuelve a responder 429, no reintentes en ráfaga: anota el Retry-After nuevo y reprograma una sola vez. No digas que un post está publicado si no tienes el id devuelto por buffer___create_post.
+
+PASOS:
+1. buffer___get_account. Di el nombre de la organización.
+2. buffer___list_channels con ese organizationId. Publica solo en canales cuyo nombre coincida, sin importar mayúsculas ni tildes, con: "IA al Alcance", "Refugio en la Palabra", "Anatomia del engaño" / "Anatomía del engaño". Si un canal no está, no inventes el id: omítelo y dilo. Pistas viejas de octubre 2026, solo para confirmar, no para usar a ciegas: org 6ab1dd0b88b55d24ffd171d7, YouTube IA 6abb15f5ea19ca0bde1c22f5, YouTube Refugio 6ab1ecc9ea19ca0bdeaf3f13. Instagram entonces no estaba.
+3. Un mp4 distinto por canal. mode shareNow. Si shareNow falla por límite de la red, usa addToQueue y dilo. schedulingType automatic, salvo notification si el canal es perfil personal de Instagram (type profile) o grupo de Facebook.
+4. Asset de video con la URL directa (application/octet-stream, no caduca). metadata.youtube.thumbnailOffset 1500 en YouTube.
+5. YouTube: metadata.youtube.title, categoryId, madeForKids false, isAiGenerated true, privacy public. IA al Alcance categoryId "15". Refugio y Anatomía si es YouTube categoryId "27".
+6. Si Anatomía del engaño es Instagram: metadata.instagram.type "reel", shouldShareToFeed true, isAiGenerated true.
+7. El campo text es la descripción completa de abajo, en español, ya mayor de 500 caracteres, con el tag real michelgonza02-20 confirmado en descripciones anteriores del repo graciasdios9999-prog/buffer-videos-20261113.
+8. Al terminar, lista canal, título, duración, id del post y URL del mp4.
+
+VIDEO A — canal IA al Alcance
+URL: https://raw.githubusercontent.com/graciasdios9999-prog/buffer-videos-20261114/main/ia_hoatzin.mp4
+Duración: 178.6 s (00:02:59)
+Título YouTube: 2026 El polluelo que se tira al río
+categoryId: 15
+TEXT:
+Un polluelo se suelta de la rama y cae al río antes de saber volar. No es un cuento: el hoacín nace con dos garras en cada ala, trepa, se hunde un instante entre las raíces y, al crecer, archiva esa herramienta. Come hojas, las fermenta en un buche enorme y por eso huele a pantano. El esternón cede espacio y el vuelo se queda corto. Es la única especie de su orden, ave nacional de Guyana, y no es un faisán aunque allá le digan faisán de Canje. Este corte es curiosidad de fauna, no un manual de mascotas.
+
+Si el dato te dejó mirando la cresta, sígueme, deja like y comparte el video con alguien que todavía cree que el bosque ya no esconde conductas raras. Comenta GARRAS si quieres otra especie que casi nadie pone en un documental de tres minutos.
+
+Como asociado de Amazon, gano por compras que califican. El precio para ti no cambia. En el video no nombro productos ni digo precios. El enlace queda aquí para que mires con calma:
+
+1. Binoculares Vortex Diamondback HD 10x42: https://www.amazon.com/s?k=Vortex+Diamondback+HD+10x42&tag=michelgonza02-20
+2. Guía Sibley de aves: https://www.amazon.com/s?k=Sibley+Guide+to+Birds&tag=michelgonza02-20
+3. Pack de libretas Field Notes: https://www.amazon.com/s?k=Field+Notes+notebook+3+pack&tag=michelgonza02-20
+4. Mochila Osprey Daylite: https://www.amazon.com/s?k=Osprey+Daylite+backpack&tag=michelgonza02-20
+5. Botella Nalgene boca ancha 32 oz: https://www.amazon.com/s?k=Nalgene+wide+mouth+32oz&tag=michelgonza02-20
+
+#Hoacin #CuriosidadesAnimales #Amazonia #2026 #Fauna #Naturaleza #Datos
+Contenido con asistencia de inteligencia artificial. Imágenes de Wikimedia Commons con licencia libre, una toma distinta por plano. Voz neural latina es-MX-DaliaNeural. No es contenido para niños.
+
+VIDEO B — canal Refugio en la Palabra
+URL: https://raw.githubusercontent.com/graciasdios9999-prog/buffer-videos-20261114/main/fe_manana.mp4
+Duración: 177.0 s (00:02:57)
+Título YouTube: 2026 El llanto no es el último turno
+categoryId: 27
+TEXT:
+Hay noches en las que el silencio pesa, y este mensaje no niega el llanto: le pone hora de salida. La frase antigua, de dominio público, dice que por la noche durará el lloro y a la mañana vendrá la alegría. Jehová no pide una sonrisa de cartel. Jesucristo no se apartó de quien lloraba. La gratitud empieza antes de que la herida cierre: se agradece el aire, el pan, el poder pronunciar el nombre de Jesús. Isaías lo dejó corto, en palabras que ya son de todos: no temas, porque yo soy contigo. Y el día que empieza no hereda toda la tinta de ayer. Quien busca a Dios con hambre honesta no se queda vacío. La promesa no depende del ánimo.
+
+Si esta palabra te sostuvo un segundo, sígueme, deja like y compártela con quien sigue despierto. Comenta MAÑANA si hoy necesitas recordar que la noche es un turno, no un nombre.
+
+Como asociado de Amazon, gano por compras que califican. El precio para ti no cambia. El video no nombra productos ni dice precios ni explica para qué sirve cada cosa. El enlace queda aquí:
+
+1. Biblia de estudio con concordancia: https://www.amazon.com/s?k=biblia+de+estudio+con+concordancia&tag=michelgonza02-20
+2. Diario de gratitud tapa dura: https://www.amazon.com/s?k=diario+de+gratitud+tapa+dura&tag=michelgonza02-20
+3. Resaltadores para estudio: https://www.amazon.com/s?k=resaltadores+pastel+estudio&tag=michelgonza02-20
+4. Lámpara de lectura con clip recargable: https://www.amazon.com/s?k=lampara+de+lectura+clip+recargable&tag=michelgonza02-20
+5. Tarjetas en blanco para notas: https://www.amazon.com/s?k=tarjetas+en+blanco+notas&tag=michelgonza02-20
+
+#Fe #Esperanza #Jesucristo #Jehova #Gratitud #2026 #RefugioEnLaPalabra
+Contenido con asistencia de inteligencia artificial. Citas breves de dominio público (Salmo 30:5, Isaías 41:10 y Lamentaciones 3:23 en el sentido de Reina-Valera 1909) o lenguaje original parafraseado. No es un audiolibro. Imágenes religiosas de Wikimedia Commons. Voz neural es-MX-JorgeNeural. No es contenido para niños.
+
+VIDEO C — canal Anatomia del engaño (YouTube categoría 27 o Instagram reel, según el servicio real del canal)
+URL: https://raw.githubusercontent.com/graciasdios9999-prog/buffer-videos-20261114/main/cu_lengua.mp4
+Duración: 179.5 s (00:03:00)
+Título: 2026 El mapa de tu lengua es falso
+TEXT:
+En la escuela te dibujaron la lengua partida en países: dulce en la punta, amargo atrás. Ese mapa se copió mal durante décadas. Casi toda la lengua prueba dulce, salado, ácido, amargo y umami. El picante ni siquiera es un sabor: es una alarma de calor. Las células del gusto se renuevan en unos diez días, y el olfato completa el informe cuando masticas. Si el aroma se apaga, la comida parece cartón. En la cocina, clavo, comino, cilantro, pimienta y vainilla despiertan esa pareja. No curan enfermedades y no reemplazan a un médico. Si pierdes el gusto de golpe, si hay fiebre o dolor, busca a un profesional.
+
+Si el dato te rompió el mapa de la escuela, sígueme, deja like y comparte el video con alguien curioso. Comenta LENGUA si quieres otra curiosidad del cuerpo, sin milagros de feria.
+
+Como asociado de Amazon, gano por compras que califican. El precio para ti no cambia. En el video no nombro productos ni digo precios ni para qué sirve cada cosa. El enlace queda aquí para mirar con calma:
+
+1. Clavo de olor entero: https://www.amazon.com/s?k=clavo+de+olor+entero&tag=michelgonza02-20
+2. Comino en semilla: https://www.amazon.com/s?k=comino+en+semilla&tag=michelgonza02-20
+3. Pimienta negra en grano: https://www.amazon.com/s?k=pimienta+negra+en+grano&tag=michelgonza02-20
+4. Vainas de vainilla: https://www.amazon.com/s?k=vainas+de+vainilla&tag=michelgonza02-20
+5. Semillas de cilantro: https://www.amazon.com/s?k=semillas+de+cilantro&tag=michelgonza02-20
+
+#CuerpoHumano #Lengua #Especias #2026 #Curiosidades #Cocina
+Contenido informativo con asistencia de inteligencia artificial. No es consejo médico. Imágenes de Wikimedia Commons. Voz neural es-CO-SalomeNeural. No es contenido para niños. No menciona ningún país del Caribe.
